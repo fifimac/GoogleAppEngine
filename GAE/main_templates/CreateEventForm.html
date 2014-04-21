@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spoirt Chara</title>
+    <link type="text/css" rel="stylesheet" href="/css/Complete.css" />
+	<script type="text/javascript" src="/js/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="/js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="/js/jquery.ui.datepicker.js"></script>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAWjhbOY0D3sv2pmdkVgqFURT5FMJh5cWC-P-IKueY88ewXzQdfxRril6YgDECCqK1rWib6H-TglhTqw" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function load() {
+            if (GBrowserIsCompatible()) {
+                var map = new GMap2(document.getElementById("map"));
+                map.addControl(new GSmallMapControl());
+                map.addControl(new GMapTypeControl());
+                var center = new GLatLng(53.34410, -6.26749);
+                map.setCenter(center, 15);
+                geocoder = new GClientGeocoder();
+                var marker = new GMarker(center, { draggable: true });
+                map.addOverlay(marker);
+                document.getElementById("lat").value = center.lat().toFixed(5);
+                document.getElementById("lng").value = center.lng().toFixed(5);
+
+                GEvent.addListener(marker, "dragend", function () {
+                    var point = marker.getPoint();
+                    map.panTo(point);
+                    document.getElementById("lat").value = point.lat().toFixed(5);
+                    document.getElementById("lng").value = point.lng().toFixed(5);
+
+                });
+
+
+                GEvent.addListener(map, "moveend", function () {
+                    map.clearOverlays();
+                    var center = map.getCenter();
+                    var marker = new GMarker(center, { draggable: true });
+                    map.addOverlay(marker);
+                    document.getElementById("lat").value = center.lat().toFixed(5);
+                    document.getElementById("lng").value = center.lng().toFixed(5);
+
+
+                    GEvent.addListener(marker, "dragend", function () {
+                        var point = marker.getPoint();
+                        map.panTo(point);
+                        document.getElementById("lat").value = point.lat().toFixed(5);
+                        document.getElementById("lng").value = point.lng().toFixed(5);
+
+                    });
+
+                });
+
+            }
+        }
+
+        function showAddress(address) {
+            var map = new GMap2(document.getElementById("map"));
+            map.addControl(new GSmallMapControl());
+            map.addControl(new GMapTypeControl());
+            if (geocoder) {
+                geocoder.getLatLng(
+          address,
+          function (point) {
+              if (!point) {
+                  alert(address + " not found");
+              } else {
+                  document.getElementById("lat").value = point.lat().toFixed(5);
+                  document.getElementById("lng").value = point.lng().toFixed(5);
+                  document.getElementById("location").value = document.getElementById("address").value;
+                  map.clearOverlays()
+                  map.setCenter(point, 14);
+                  var marker = new GMarker(point, { draggable: true });
+                  map.addOverlay(marker);
+
+                  GEvent.addListener(marker, "dragend", function () {
+                      var pt = marker.getPoint();
+                      map.panTo(pt);
+                      document.getElementById("lat").value = pt.lat().toFixed(5);
+                      document.getElementById("lng").value = pt.lng().toFixed(5);
+                  });
+
+
+                  GEvent.addListener(map, "moveend", function () {
+                      map.clearOverlays();
+                      var center = map.getCenter();
+                      var marker = new GMarker(center, { draggable: true });
+                      map.addOverlay(marker);
+                      document.getElementById("lat").value = center.lat().toFixed(5);
+                      document.getElementById("lng").value = center.lng().toFixed(5);
+                      
+                      GEvent.addListener(marker, "dragend", function () {
+                          var pt = marker.getPoint();
+                          map.panTo(pt);
+                          document.getElementById("lat").value = pt.lat().toFixed(5);
+                          document.getElementById("lng").value = pt.lng().toFixed(5);
+                          document.getElementById("location").value = document.getElementById("address").value;
+                      });
+
+                  });
+
+              }
+          }
+        );
+            }
+        }
+    </script>
+    
+                  <style type="text/css">
+                    body
+	                {
+		                margin:0px;
+		                padding:0px;
+		                background-image:url(/images/addevent.jpg);
+		                background-repeat:repeat-x;
+		                background-color:#bbcd72;
+	                }
+                  .eventheader
+                  {
+                      font-family: Arial;
+                      font-size: 16px;
+                      font-weight: bold;
+                      color: #990000;
+                  }
+                  .eventtext
+                  {
+                      font-family: Arial;
+                      font-size: 16px;
+                      font-weight: bold;
+                      color: #0000A0;
+                  }
+                  .tblheader
+                  {
+                      font-family: Arial;
+                      font-size: 16px;
+                      font-weight: bold;
+                      color: #990000;
+                  }
+              </style>
+</head>
+
+<body onload="load()" onunload="GUnload()" >
+          <table border=0 width=530px class="eventheader">
+              <tr>
+                  <td>
+                      <form id="post_form" method="POST">
+                        <table class="eventheader">
+                        <tr><td>Event:<br /><input type="text" name="event_title" size=29 /></td></tr>
+                        <tr><td>Description:<br /><textarea name="event_description" rows="8" cols="22"></textarea></td></tr>
+                        <tr><td>Date:<br /><input type="text" name="datepicker" id="datepicker" size=29 /></td></tr>
+                        <tr><td>Location:<br /><input type="text" name="location" id="location" size=29 /></td></tr>
+                        </table>
+                        <input type="hidden" name="lat" id="lat" />
+                        <input type="hidden" name="lng" id="lng" />
+                        <table class="eventheader">
+                        <tr><td>Google Contacts:<br />
+                            <select name="event_attendees" id="event_attendees" multiple="true" style="width:200px;height:100px;margin:5px 0 5px 0;"> 
+                            {% for item in contacts.items %}
+                              <option value="{{ item.1 }}">{{ item.0 }}</option>
+                            {% endfor %}
+                            </select><br /><br />
+                            <small>Use the 'Control' to select multiple.</small><br/>
+                            <br />
+                        </td></tr>
+                        </table>
+                          <div><input type="submit" value="Create Event"></div>
+                                                    
+                     </form>
+                  </td>
+                  <td valign=top>
+                      <form action="#" onsubmit="showAddress(this.address.value); return false">
+                         <p>  
+                          <br />      
+                          <input type="text" size="25" name="address" id="address" value="Dublin Ireland" />
+                          <input type="submit" value="Search!" />
+                          </p>
+                      </form>
+
+                      <p>
+                      <div align="center" id="map" style="width: 300px; height: 250px"><br/></div>
+                       </p>
+                      </div>
+                  </td>
+              </tr>
+          </table>
+             
+<script type="text/javascript">
+    $(function () {
+        $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd'});
+    });
+</script> 
+          
+</body>
+</html>

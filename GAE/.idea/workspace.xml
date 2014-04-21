@@ -61,12 +61,19 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43445122" vertical-offset="0" max-vertical-offset="656">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-              <folding>
-                <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.43972835" vertical-offset="1046" max-vertical-offset="1635">
+              <caret line="87" column="39" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="70060" max-vertical-offset="102150">
+              <caret line="6804" column="1" selection-start-line="6804" selection-start-column="1" selection-end-line="6804" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +91,8 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15038" max-vertical-offset="15705">
-              <caret line="1035" column="5" selection-start-line="1035" selection-start-column="5" selection-end-line="1035" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="18090">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -134,8 +141,9 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/main_templates/CreateEventForm.html" />
         <option value="$PROJECT_DIR$/main_templates/ViewEventForm.html" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/static/js/map.js" />
+        <option value="$PROJECT_DIR$/static/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/main_templates/index.html" />
       </list>
     </option>
@@ -221,6 +229,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -479,12 +491,12 @@
       <changelist id="82ebd8f5-88c7-4b4a-aa23-d7a82021a63f" name="Default" comment="" />
       <created>1398087994109</created>
       <updated>1398087994109</updated>
-      <workItem from="1398087991409" duration="5402000" />
+      <workItem from="1398087991409" duration="10465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5402000" />
+    <option name="totallyTimeSpent" value="10465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="75" width="1301" height="823" extended-state="0" />
@@ -534,7 +546,9 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.yaml">
@@ -590,14 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15038" max-vertical-offset="15705">
-          <caret line="1035" column="5" selection-start-line="1035" selection-start-column="5" selection-end-line="1035" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
@@ -606,14 +612,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="70060" max-vertical-offset="102150">
+          <caret line="6804" column="1" selection-start-line="6804" selection-start-column="1" selection-end-line="6804" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="18090">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main_templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43445122" vertical-offset="0" max-vertical-offset="656">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.43972835" vertical-offset="1046" max-vertical-offset="1635">
+          <caret line="87" column="39" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

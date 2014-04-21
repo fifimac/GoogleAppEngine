@@ -33,12 +33,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43066883" vertical-offset="10806" max-vertical-offset="11505">
-              <caret line="738" column="79" selection-start-line="738" selection-start-column="79" selection-end-line="738" selection-end-column="79" />
+            <state vertical-scroll-proportion="-5.291139" vertical-offset="10892" max-vertical-offset="11505">
+              <caret line="754" column="44" selection-start-line="754" selection-start-column="44" selection-end-line="754" selection-end-column="44" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateEventForm.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main_templates/CreateEventForm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8364486" vertical-offset="543" max-vertical-offset="1185">
+              <caret line="145" column="7" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
+              <folding>
+                <element signature="tag#script#5;tag#head#0;tag#html#0" expanded="false" />
+                <element signature="tag#style#0;tag#head#0;tag#html#0" expanded="false" />
+                <element signature="n#style#0;n#select#0;n#td#0;n#tr#0;n#table#1;n#form#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,6 +69,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/main_templates/CreateEventForm.html" />
       </list>
     </option>
   </component>
@@ -119,7 +135,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="main_templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,12 +258,12 @@
       <changelist id="82ebd8f5-88c7-4b4a-aa23-d7a82021a63f" name="Default" comment="" />
       <created>1398087994109</created>
       <updated>1398087994109</updated>
-      <workItem from="1398087991409" duration="644000" />
+      <workItem from="1398087991409" duration="1601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="644000" />
+    <option name="totallyTimeSpent" value="1601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="30" y="22" width="1301" height="823" extended-state="0" />
@@ -310,9 +326,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43066883" vertical-offset="10806" max-vertical-offset="11505">
-          <caret line="738" column="79" selection-start-line="738" selection-start-column="79" selection-end-line="738" selection-end-column="79" />
+        <state vertical-scroll-proportion="-5.291139" vertical-offset="10892" max-vertical-offset="11505">
+          <caret line="754" column="44" selection-start-line="754" selection-start-column="44" selection-end-line="754" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_templates/CreateEventForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8364486" vertical-offset="543" max-vertical-offset="1185">
+          <caret line="145" column="7" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
+          <folding>
+            <element signature="tag#script#5;tag#head#0;tag#html#0" expanded="false" />
+            <element signature="tag#style#0;tag#head#0;tag#html#0" expanded="false" />
+            <element signature="n#style#0;n#select#0;n#td#0;n#tr#0;n#table#1;n#form#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

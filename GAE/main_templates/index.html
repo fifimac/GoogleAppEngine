@@ -9,167 +9,137 @@
 	<script type="text/javascript" src="/js/jquery.ui.core.js"></script>
 	<script type="text/javascript" src="/js/jquery.ui.widget.js"></script>
 	<script type="text/javascript" src="/js/jquery.ui.datepicker.js"></script>
-    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAWjhbOY0D3sv2pmdkVgqFURT5FMJh5cWC-P-IKueY88ewXzQdfxRril6YgDECCqK1rWib6H-TglhTqw" type="text/javascript"></script>
-
-<script type="text/javascript">
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places" type="text/javascript"></script>
+    <script type="text/javascript">
         function load(x,y) {
-            if (GBrowserIsCompatible()) {
-                var map = new GMap2(document.getElementById("map"));
-                map.addControl(new GSmallMapControl());
-                map.addControl(new GMapTypeControl());
-                var center = new GLatLng(x,y);
-                map.setCenter(center, 15);
-                geocoder = new GClientGeocoder();
-                var marker = new GMarker(center, { draggable: true });
-                map.addOverlay(marker);
-                document.getElementById("lat").value = center.lat().toFixed(5);
-                document.getElementById("lng").value = center.lng().toFixed(5);
+            var pyrmont = new google.maps.LatLng(x,y);
+            map = new google.maps.Map(document.getElementById('map'), {
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: pyrmont,
+                zoom: 15
+            });
+            var marker = new google.maps.Marker({position: pyrmont,map: map,title:"Hello World!" });
+        }
+
+
+            function map_load() {
+                x = document.getElementById("lat").value;
+                y = document.getElementById("lng").value;
+                load(x, y);
             }
+
+        function load_2(css_ref, new_url) {
+            $(css_ref).load(new_url);
         }
 
-        function map_load() {
-            x = document.getElementById("lat").value;
-            y = document.getElementById("lng").value;
-            load(x, y);
-        }
- 
-    function load_2(css_ref, new_url) {
-        $(css_ref).load(new_url);
-    }
+        function StartSearch() {
+            sport1 = document.getElementById("sportinput").value;
+            location1 = document.getElementById("locationinput").value;
 
-    function StartSearch() {
-        sport1 = document.getElementById("sportinput").value;
-        location1 = document.getElementById("locationinput").value;
-
-        var search_url = "http://jmccarthycalendar.appspot.com/search?";
-        var tmp = 0;
-        if (sport1 == "Sport") {
-            // No Sport input
-        } else {
-            search_url = search_url + "sport=" + sport1;
-            tmp = 1;
-        }
-
-        if (location1 == "Location") {
-            // No Sport input
-        } else {
-            if (tmp == 0) {
-                search_url = search_url + "location=" + location1;
+            var search_url = "http://jmccarthycalendar.appspot.com/search?";
+            var tmp = 0;
+            if (sport1 == "Sport") {
+                // No Sport input
             } else {
-                search_url = search_url + "&location=" + location1;
+                search_url = search_url + "sport=" + sport1;
+                tmp = 1;
             }
+
+            if (location1 == "Location") {
+                // No Sport input
+            } else {
+                if (tmp == 0) {
+                    search_url = search_url + "location=" + location1;
+                } else {
+                    search_url = search_url + "&location=" + location1;
+                }
+            }
+            // alert(search_url);
+            // http://jmccarthycalendar.appspot.com/search?sport=Golf&location=naas
+            CLoad('Search Results', search_url)
         }
-        // alert(search_url);
-        // http://jmccarthycalendar.appspot.com/search?sport=Golf&location=naas
-        CLoad('Search Results', search_url)
-    }
 
-    function AddEventToCalendar(eid, et, ed, dp, loc) {
-        var save_url = "http://jmccarthycalendar.appspot.com/AddUser?"
-        save_url = save_url + "eventid=" + eid + "&";
-        save_url = save_url + "event_title=" + et + "&";
-        save_url = save_url + "event_description=" + ed + "&";
-        save_url = save_url + "datepicker=" + dp + "&";
-        save_url = save_url + "location=" + loc;
-        //alert(save_url);
-        CLoad('Event Added to Calendar', save_url)
-    }
-
-    function accept_terms() {
-        var load = window.open('http://jmccarthycalendar.appspot.com/UserLogin', '', 'scrollbars=no,menubar=no,height=600,width=800,resizable=yes,toolbar=no,location=no,status=no');
-    }
-
-
-    var xmlHttp
-
-    function GetXmlHttpObject() {
-        var xmlHttp = null;
-        try {
-            // Firefox, Opera 8.0+, Safari
-            xmlHttp = new XMLHttpRequest();
+        function AddEventToCalendar(eid, et, ed, dp, loc) {
+            var save_url = "http://jmccarthycalendar.appspot.com/AddUser?"
+            save_url = save_url + "eventid=" + eid + "&";
+            save_url = save_url + "event_title=" + et + "&";
+            save_url = save_url + "event_description=" + ed + "&";
+            save_url = save_url + "datepicker=" + dp + "&";
+            save_url = save_url + "location=" + loc;
+            //alert(save_url);
+            CLoad('Event Added to Calendar', save_url)
         }
-        catch (e) {
-            // Internet Explorer
+
+        function accept_terms() {
+            var load = window.open('http://jmccarthycalendar.appspot.com/UserLogin', '', 'scrollbars=no,menubar=no,height=600,width=800,resizable=yes,toolbar=no,location=no,status=no');
+        }
+
+
+        var xmlHttp
+
+        function GetXmlHttpObject() {
+            var xmlHttp = null;
             try {
-                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
             }
             catch (e) {
-                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                // Internet Explorer
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
+        }
+
+        function CLoad(header, str) {
+            document.getElementById("leftheading").innerHTML = header;
+            xmlHttp2 = GetXmlHttpObject();
+            if (xmlHttp2 == null) {
+                alert("Your browser does not support AJAX!");
+                return;
+            }
+            var url = str;
+            xmlHttp2.onreadystatechange = stateChangedCLoad;
+            xmlHttp2.open("GET", url, true);
+            xmlHttp2.send(null);
+            xmlHttp2.close;
+        }
+        function stateChangedCLoad() {
+            if (xmlHttp2.readyState == 4) {
+                document.getElementById("lefttxtblank").innerHTML = "";
+                document.getElementById("lefttxtblank").innerHTML = xmlHttp2.responseText;
             }
         }
-        return xmlHttp;
-    }
+    </script>
 
-    function CLoad(header, str) {
-        document.getElementById("leftheading").innerHTML = header;
-        xmlHttp2 = GetXmlHttpObject();
-        if (xmlHttp2 == null) {
-            alert("Your browser does not support AJAX!");
-            return;
+    <script type="text/javascript">
+    <!--
+        var delayTime = 1000
+        setTimeout(online, delayTime)
+        function online() {
+            if (document.getElementById("lat")) {
+                map_load()
+            }
+            setTimeout(online, 15000)
         }
-        var url = str;
-        xmlHttp2.onreadystatechange = stateChangedCLoad;
-        xmlHttp2.open("GET", url, true);
-        xmlHttp2.send(null);
-        xmlHttp2.close;
-    }
-    function stateChangedCLoad() {
-        if (xmlHttp2.readyState == 4) {
-            document.getElementById("lefttxtblank").innerHTML = "";
-            document.getElementById("lefttxtblank").innerHTML = xmlHttp2.responseText;
+    //-->
+    </script>
+
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
         }
-    }
-</script> 
-
-<script type="text/javascript">
-<!--
-    var delayTime = 1000
-    setTimeout(online, delayTime)
-    function online() {
-        if (document.getElementById("lat")) {
-            map_load()
+        #map_canvas {
+            height: 280px;
+            width: 280px;
+            margin-top: 0.6em;
         }
-        setTimeout(online, 1000)
-    }
-//-->
-</script>
-
-              <style type="text/css">
-                  .eventheader
-                  {
-                      font-family: Arial;
-                      font-size: 16px;
-                      font-weight: bold;
-                      color: #990000;
-                  }
-                  .eventtext
-                  {
-                      font-family: Arial;
-                      font-size: 16px;
-                      font-weight: bold;
-                      color: #0000A0;
-                  }
-                  .tblheader
-                  {
-                      font-family: Arial;
-                      font-size: 16px;
-                      font-weight: bold;
-                      color: #990000;
-                  }
-                  #oursearch h5
-	                {
-		                width:177px;
-		                height:31px;
-		                float:left;
-		                margin:0px;
-		                padding:0px 0 0 0px;
-		                font-family:Arial;
-		                font-size:18px;
-		                font-weight:normal;
-		                color:2a2a2a;
-	                }
-
-              </style>
+    </style>
 </head>
 
 <body>

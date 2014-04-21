@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateEventForm.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CreateEventForm.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_templates/CreateEventForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8364486" vertical-offset="543" max-vertical-offset="1185">
+            <state vertical-scroll-proportion="-10.74" vertical-offset="543" max-vertical-offset="1185">
               <caret line="145" column="7" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
               <folding>
                 <element signature="tag#script#5;tag#head#0;tag#html#0" expanded="false" />
@@ -54,6 +54,16 @@
                 <element signature="n#style#0;n#select#0;n#td#0;n#tr#0;n#table#1;n#form#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main_templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.3248503" vertical-offset="870" max-vertical-offset="3810">
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,6 +80,7 @@
       <list>
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/main_templates/CreateEventForm.html" />
+        <option value="$PROJECT_DIR$/main_templates/index.html" />
       </list>
     </option>
   </component>
@@ -258,12 +269,12 @@
       <changelist id="82ebd8f5-88c7-4b4a-aa23-d7a82021a63f" name="Default" comment="" />
       <created>1398087994109</created>
       <updated>1398087994109</updated>
-      <workItem from="1398087991409" duration="1601000" />
+      <workItem from="1398087991409" duration="2480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1601000" />
+    <option name="totallyTimeSpent" value="2480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="30" y="22" width="1301" height="823" extended-state="0" />
@@ -334,7 +345,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_templates/CreateEventForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8364486" vertical-offset="543" max-vertical-offset="1185">
+        <state vertical-scroll-proportion="-10.74" vertical-offset="543" max-vertical-offset="1185">
           <caret line="145" column="7" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
           <folding>
             <element signature="tag#script#5;tag#head#0;tag#html#0" expanded="false" />
@@ -342,6 +353,14 @@
             <element signature="n#style#0;n#select#0;n#td#0;n#tr#0;n#table#1;n#form#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3248503" vertical-offset="870" max-vertical-offset="3810">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

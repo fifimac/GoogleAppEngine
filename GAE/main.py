@@ -26,7 +26,8 @@ import gdata.service
 APP_INFO = """This """
 
 APP_NAME = 'Sports Friends'
-CSS_LINK = '<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />'
+CSS_LINK = '<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css" />'
+
 # Change the value of HOST_NAME to the name given to point to your app.
 HOST_NAME = 'fifissportsfriends.appspot.com'
 # Default values for new events
@@ -598,7 +599,7 @@ class ViewCalendar(webapp.RequestHandler):
 
 class AddEventIframe(webapp.RequestHandler):
     def get(self):
-        self.response.out.write("<iframe src=\"http://fifissportsfriends.appspot.com/AddEvent\" style=\"border: 0\" width=\"530\" height=\"650\" frameborder=\"0\" scrolling=\"no\"></iframe>")
+        self.response.out.write("<iframe src=\"http://fifissportsfriends.appspot.com/AddEvent\" style=\"border: 0\" width=\"530\" height=\"1000\" frameborder=\"0\" scrolling=\"no\"></iframe>")
 
 class Start(webapp.RequestHandler):
     # Initialize some global variables we will use
@@ -728,11 +729,11 @@ class SetRegistrationDetails(webapp.RequestHandler):
 
 class CheckLogin(webapp.RequestHandler):
     def get(self):
-        self.response.out.write("<iframe src=\"http://fifissportsfriends.appspot.com/UserManagement\" style=\"border: 0\" width=\"530\" height=\"650\" frameborder=\"0\" scrolling=\"no\"></iframe>")
+        self.response.out.write("<iframe src=\"http://fifissportsfriends.appspot.com/UserManagement\" style=\"border: 0\" width=\"650\" height=\"1000\" frameborder=\"0\" scrolling=\"no\"></iframe>")
 
 class GetLogin(webapp.RequestHandler):
     def get(self):
-        self.response.out.write("<iframe src=\"http://fifissportsfriends.appspot.com/UserLogin\" style=\"border: 0\" width=\"530\" height=\"650\" frameborder=\"0\" scrolling=\"no\"></iframe>")
+        self.response.out.write("<iframe src=\"http://fifissportsfriends.appspot.com/UserLogin\" style=\"border: 0\" width=\"650\" height=\"1000\" frameborder=\"0\" scrolling=\"no\"></iframe>")
            
 def main():
     application = webapp.WSGIApplication(
